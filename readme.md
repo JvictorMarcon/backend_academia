@@ -14,7 +14,7 @@ Esta API REST foi construída em **Python** com **Flask** para gerenciar o cadas
 * **Clonar:** `git clone https://github.com/seu-usuario/projeto-gym-frontend.git`
 
 ### ⚙️ Backend (Esta API)
-* **Deploy (Vercel):** [https://backendacademia-4w40csj8d-jvictormarcons-projects.vercel.app/](INSIRA_O_LINK_AQUI)
+* **Deploy (Vercel):** [https://backendacademia.vercel.app/](INSIRA_O_LINK_AQUI)
 * **Repositório:** [https://github.com/JvictorMarcon/backend_academia.git](INSIRA_O_LINK_AQUI)
 * **Clonar:** `git clone https://github.com/JvictorMarcon/backend_academia.git`
 
