@@ -74,7 +74,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Cliente'
 
-  /cliente:
+  /clientes:
     post:
       summary: Cadastra um novo cliente
       security:
@@ -95,7 +95,7 @@ paths:
         '400':
           description: Dados inválidos ou falha no cadastro.
 
-  /cliente/{cpf}:
+  /clientes/{cpf}:
     parameters:
       - name: cpf
         in: path
