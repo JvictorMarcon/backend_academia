@@ -63,7 +63,7 @@ def buscar_clientes():
     return jsonify(clientes), 200
 
 #Rota para buscar cliente pelo cpf
-@app.route('/cliente/<int:cpf>', methods = ['GET'])
+@app.route('/clientes/<int:cpf>', methods = ['GET'])
 def buscar_cliente_pelo_id(cpf):
     
     #Busca os dados da coleção "clientes" com filtro de cpf
@@ -102,7 +102,7 @@ def login():
 # Rotas Privadas
 #=======================
 #Rota para cadastrar um cliente
-@app.route('/cliente', methods = ["POST"])
+@app.route('/clientes', methods = ["POST"])
 @token_obrigatorio
 def adicionar_cliente():
     #Pegando os dados da requisição HTTP e guardando em "dados"
@@ -140,7 +140,7 @@ def adicionar_cliente():
         return jsonify({"error": "Falha no cadastro do cliente"}), 400
 
 #Rota para o método - PATCH - altera apenas algumas infomações
-@app.route('/cliente/<int:cpf>', methods = ["PATCH"])
+@app.route('/clientes/<int:cpf>', methods = ["PATCH"])
 @token_obrigatorio
 def editar_informacoes_cliente(cpf):
     dados = request.get_json()
@@ -171,7 +171,7 @@ def editar_informacoes_cliente(cpf):
         return jsonify({"error": "Falha na alteração do cliente"}), 400
 
 #Rota para o método DELETE
-@app.route('/cliente/<int:cpf>', methods = ['DELETE'])
+@app.route('/clientes/<int:cpf>', methods = ['DELETE'])
 @token_obrigatorio
 def deletar_cliente(cpf): 
     
