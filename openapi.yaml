@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: API GYM (Academia)
   description: API para gerenciamento de clientes e autenticação de administradores.
-  version: 1.0.0
+  version: 1.1.0
   contact:
     name: João Victor e Guilherme
 
@@ -39,12 +39,6 @@ components:
         nome: "João Silva"
         status: true
 
-    Erro:
-      type: object
-      properties:
-        error:
-          type: string
-
 paths:
   /:
     get:
@@ -73,8 +67,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Cliente'
-
-  /clientes:
     post:
       summary: Cadastra um novo cliente
       security:
