@@ -96,7 +96,7 @@ def login():
             "message":"Login realizado com sucesso",
             "token": token
         }), 200
-    return jsonify({"error":"Usuário ou senha inválido"})
+    return jsonify({"error":"Usuário ou senha inválido"}),401
 
 #=======================
 # Rotas Privadas
