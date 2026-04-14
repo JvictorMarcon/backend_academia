@@ -140,20 +140,21 @@ def adicionar_cliente():
         return jsonify({"error": "Falha no cadastro do cliente"}), 400
 
 #Rota para o método - PATCH - altera apenas algumas infomações
-@app.route('/clientes/<int:cpf>', methods = ["PATCH"])
+@app.route('/clientes/<cpf>', methods = ["PATCH"])
 @token_obrigatorio
 def editar_informacoes_cliente(cpf):
+    cpf = str(cpf)
     dados = request.get_json()
     
     if not dados or ('nome' not in dados and 'status' not in dados and 'cpf' not in dados):
         return jsonify({"error":"Dados inválidos"}), 400
 
     try:
-        docs = db.collection("clientes").where("cpf", "==",cpf).limit(1).get()
+        docs = db.collection("clientes").where("cpf","==",cpf).limit(1).get()
         if not docs:
             return jsonify({"error":"cliente não encontrado"}), 404
         
-        doc_ref = db.collection("clientes").document(docs[0].cpf)
+        doc_ref = db.collection("clientes").document(docs[0].id)
         update_cliente = {}
         if "nome" in dados:
             update_cliente["nome"] = dados["nome"]
