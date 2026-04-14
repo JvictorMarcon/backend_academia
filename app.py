@@ -143,7 +143,6 @@ def adicionar_cliente():
 @app.route('/clientes/<cpf>', methods = ["PATCH"])
 @token_obrigatorio
 def editar_informacoes_cliente(cpf):
-    cpf = str(cpf)
     dados = request.get_json()
     
     if not dados or ('nome' not in dados and 'status' not in dados and 'cpf' not in dados):
