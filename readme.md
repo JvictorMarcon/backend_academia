@@ -14,9 +14,9 @@ Esta API REST foi construída em **Python** com **Flask** para gerenciar o cadas
 * **Clonar:** `git clone https://github.com/seu-usuario/projeto-gym-frontend.git`
 
 ### ⚙️ Backend (Esta API)
-* **Deploy (Vercel):** [https://seuprompt-api.vercel.app](INSIRA_O_LINK_AQUI)
-* **Repositório:** [https://github.com/seu-usuario/projeto-gym-backend](INSIRA_O_LINK_AQUI)
-* **Clonar:** `git clone https://github.com/seu-usuario/projeto-gym-backend.git`
+* **Deploy (Vercel):** [https://backendacademia-otxmr1412-jvictormarcons-projects.vercel.app/](INSIRA_O_LINK_AQUI)
+* **Repositório:** [https://github.com/JvictorMarcon/backend_academia.git](INSIRA_O_LINK_AQUI)
+* **Clonar:** `git clone https://github.com/JvictorMarcon/backend_academia.git`
 
 ---
 
@@ -101,10 +101,5 @@ Esta API REST foi construída em **Python** com **Flask** para gerenciar o cadas
 * **João Victor**
 * **Guilherme**
 
-## link para o projeto na Vercel::
-* (https://backendacademia-otxmr1412-jvictormarcons-projects.vercel.app/)
-
-## link do projeto frondend:
-* (https://frontendacademia-otxmr1412-jvictormarcons-projects.vercel.app/)-github
 --
 *Este projeto é para fins educacionais - SENAI 2026.*
