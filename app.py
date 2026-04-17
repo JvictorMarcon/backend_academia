@@ -164,7 +164,7 @@ def editar_informacoes_cliente(cpf):
             
             cliente_existente = db.collection('clientes').where('cpf', '==', cpf_atual).get()
 
-            if len(cliente_existente) > 0:
+            if len(cliente_existente) > 1:
                 return jsonify({"error": "Cliente com esse cpf já cadastrado"}), 400
     
     try:
