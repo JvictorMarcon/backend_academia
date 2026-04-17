@@ -9,7 +9,7 @@ Esta API REST foi construída em **Python** com **Flask** para gerenciar o cadas
 ## 🔗 Links do Projeto
 
 ### 💻 Frontend
-* **Deploy-ADM (Vercel):** https://painel-administrativo-academia-gge9.vercel.app/
+* **Deploy-ADM (Vercel):** https://painel-administrativo-academia-main.vercel.app/
 * **Deploy-USER (Vercel):** https://catraca-academia-certa.vercel.app/
 * **Repositório-ADM:** https://github.com/Glcost/painel-administrativo-academia.git
 * **Repositório-USER:** https://github.com/Glcost/catraca-academia.git
