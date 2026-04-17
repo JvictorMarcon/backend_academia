@@ -10,8 +10,8 @@ Esta API REST foi construída em **Python** com **Flask** para gerenciar o cadas
 
 ### 💻 Frontend
 * **Deploy (Vercel):** [https://seuprompt-front.vercel.app](INSIRA_O_LINK_AQUI)
-* **Repositório:** [https://github.com/seu-usuario/projeto-gym-frontend](INSIRA_O_LINK_AQUI)
-* **Clonar:** `git clone https://github.com/seu-usuario/projeto-gym-frontend.git`
+* **Repositório:** https://github.com/Glcost/painel-administrativo-academia.git
+* **Clonar:** `git clone https://github.com/Glcost/painel-administrativo-academia.git`
 
 ### ⚙️ Backend (Esta API)
 * **Deploy (Vercel):** https://backendacademia.vercel.app/
