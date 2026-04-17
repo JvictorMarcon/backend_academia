@@ -163,6 +163,10 @@ def editar_informacoes_cliente(cpf):
         if not docs:
             return jsonify({"error":"cliente não encontrado"}), 404
         
+        cpf_atual = dados["cpf"]
+        if len(cpf_atual) != 11:
+            return jsonify({"error":"O CPF deve conter exatamente 11 números"})    
+            
         doc_ref = db.collection("clientes").document(docs[0].id)
         update_cliente = {}
         if "nome" in dados:
