@@ -107,11 +107,18 @@ def login():
 def adicionar_cliente():
     #Pegando os dados da requisição HTTP e guardando em "dados"
     dados = request.get_json()
-    
+    lista = db.collection('clientes').get()    
     #Verificando se o post de clientes irá ter nome e cpf
     if not dados or 'cpf' not in dados or 'nome' not in dados: 
         return jsonify({"error": "Dados inválidos ou faltando"}),400
     
+    cpf_enviado = str(dados['cpf'])
+    # 2. Forma mais simples e eficiente de verificar se o CPF existe
+    # Fazemos uma query rápida apenas para esse CPF
+    cliente_existente = db.collection('clientes').where('cpf', '==', cpf_enviado).get()
+
+    if len(cliente_existente) > 0:
+        return jsonify({"error": "Cliente com esse cpf já cadastrado"}), 400
     #Busca pelo contador
     try:
         #Referenciando o contador no banco de dados
