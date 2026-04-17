@@ -157,9 +157,10 @@ def editar_informacoes_cliente(cpf):
     
     if not dados or ('nome' not in dados and 'status' not in dados and 'cpf' not in dados):
         return jsonify({"error":"Dados inválidos"}), 400
-    cpf_atual = dados["cpf"]    
-    if len(cpf_atual) != 11:
-        return jsonify({"error":"O CPF deve conter exatamente 11 números"}) 
+    if 'cpf' in dados:
+            cpf_atual = dados["cpf"]    
+            if len(cpf_atual) != 11:
+                    return jsonify({"error":"O CPF deve conter exatamente 11 números"}) 
     
     try:
         docs = db.collection("clientes").where("cpf","==",cpf).limit(1).get()
