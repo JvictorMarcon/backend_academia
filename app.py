@@ -165,9 +165,6 @@ def editar_informacoes_cliente(cpf):
         docs = db.collection("clientes").where("cpf","==",cpf).limit(1).get()
         if not docs:
             return jsonify({"error":"cliente não encontrado"}), 404
-        
-        
-   
             
         doc_ref = db.collection("clientes").document(docs[0].id)
         update_cliente = {}
