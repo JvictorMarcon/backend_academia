@@ -161,6 +161,11 @@ def editar_informacoes_cliente(cpf):
             cpf_atual = dados["cpf"]    
             if len(cpf_atual) != 11:
                 return jsonify({"error":"O CPF deve conter exatamente 11 números"})
+            
+            cliente_existente = db.collection('clientes').where('cpf', '==', cpf_atual).get()
+
+            if len(cliente_existente) > 0:
+                return jsonify({"error": "Cliente com esse cpf já cadastrado"}), 400
     
     try:
         docs = db.collection("clientes").where("cpf","==",cpf).limit(1).get()
