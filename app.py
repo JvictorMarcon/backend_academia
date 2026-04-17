@@ -88,7 +88,7 @@ def login():
     senha = dados.get("senha")
     
     if not usuario or not senha:
-        return jsonify({"error":"Usuário e senha são obrigatórios"})
+        return jsonify({"error":"Usuário e senha são obrigatórios"}),400
     
     if usuario == ADM_USUARIO and senha == ADM_SENHA:
         token = gerar_token(usuario)
