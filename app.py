@@ -63,7 +63,7 @@ def buscar_clientes():
     return jsonify(clientes), 200
 
 #Rota para buscar cliente pelo cpf
-@app.route('/clientes/<int:cpf>', methods = ['GET'])
+@app.route('/clientes/<cpf>', methods = ['GET'])
 def buscar_cliente_pelo_id(cpf):
     
     #Busca os dados da coleção "clientes" com filtro de cpf
