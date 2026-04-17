@@ -158,14 +158,20 @@ def editar_informacoes_cliente(cpf):
     if not dados or ('nome' not in dados and 'status' not in dados and 'cpf' not in dados):
         return jsonify({"error":"Dados inválidos"}), 400
     if 'cpf' in dados:
-            cpf_atual = dados["cpf"] 
+            cpf_atual = dados["cpf"]    
             if len(cpf_atual) != 11:
-                return jsonify({"error":"O CPF deve conter exatamente 11 números"}), 400 
+                return jsonify({"error":"O CPF deve conter exatamente 11 números"})
+            
+            cliente_existente = db.collection('clientes').where('cpf', '==', cpf_atual).get()
+
+            if len(cliente_existente) > 0:
+                return jsonify({"error": "Cliente com esse cpf já cadastrado"}), 400
+    
     try:
         docs = db.collection("clientes").where("cpf","==",cpf).limit(1).get()
         if not docs:
             return jsonify({"error":"cliente não encontrado"}), 404
-        
+            
         doc_ref = db.collection("clientes").document(docs[0].id)
         update_cliente = {}
         if "nome" in dados:
