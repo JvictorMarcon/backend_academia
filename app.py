@@ -118,6 +118,10 @@ def adicionar_cliente():
 
     if len(cliente_existente) > 0:
         return jsonify({"error": "Cliente com esse cpf já cadastrado"}), 400
+    
+    #Validação de CPF (Quantidade de caracteres)
+    if len(cpf_enviado) != 11:
+        return jsonify({"error": "O CPF deve conter exatamente 11 números"}),400
     #Busca pelo contador
     try:
         #Referenciando o contador no banco de dados
