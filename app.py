@@ -190,11 +190,11 @@ def editar_informacoes_cliente(cpf):
         return jsonify({"error": "Falha na alteração do cliente"}), 400
 
 #Rota para o método DELETE
-@app.route('/clientes/<int:cpf>', methods = ['DELETE'])
+@app.route('/clientes/<cpf>', methods = ['DELETE'])
 @token_obrigatorio
 def deletar_cliente(cpf): 
     
-    docs = db.collection("clientes").where("cpf", "==", str(cpf)).limit(1).get()
+    docs = db.collection("clientes").where("cpf", "==", cpf).limit(1).get()
     
     if not docs:
         return jsonify({"error": f"Cliente com CPF {cpf} não encontrado"}), 404
